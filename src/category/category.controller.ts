@@ -27,7 +27,7 @@ export class CategoryController {
 			],
 			{ relations: [ 'categories' ] }
 		);
-		blogs = blogs.map((blog) => {
+		let _blogs = blogs.map((blog) => {
 			return {
 				...blog,
 				...{
@@ -36,7 +36,7 @@ export class CategoryController {
 			};
 		});
 
-		this.blogdb.save(blogs);
+		this.blogdb.save(_blogs);
 		return res;
 	}
 
