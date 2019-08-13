@@ -31,7 +31,7 @@ export class Blog extends BaseEntity {
 	@Column() gen: Date;
 
 	//跟新时间
-	@Column() update: Date;
+	// @Column() update: Date;
 
 	@ManyToOne((type) => User, (user) => user.blogs)
 	user: User;
