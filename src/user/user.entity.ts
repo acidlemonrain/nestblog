@@ -50,12 +50,3 @@ export class User extends BaseEntity {
 	@OneToMany((type) => Category, (categories) => categories.user)
 	categories: Category[];
 }
-
-const newCategory = { categoryName: 'test', blogs: [ { id: 1 } ] }
-CategoryRepository.save(newCategory);
-
-
-FoundBlog:{
-	id:1,
-	categories:[{id:1,categoryName: 'test'}]
-}
