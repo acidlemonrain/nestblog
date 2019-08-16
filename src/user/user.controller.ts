@@ -22,8 +22,7 @@ export class UserController {
 			console.log(e);
 		}
 	}
-	//sent music 
-	
+	//sent music
 
 	@Post('/auth') //axios : username, password
 	async auth(@Body() body) {

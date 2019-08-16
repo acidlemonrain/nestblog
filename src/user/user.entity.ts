@@ -1,5 +1,6 @@
 import { Blog } from '../blog/blog.entity';
 import { Category } from '../category/category.entity';
+import { Gallery } from '../gallery/gallery.entity';
 import {
 	Entity,
 	PrimaryGeneratedColumn,
@@ -49,4 +50,7 @@ export class User extends BaseEntity {
 	//博客分类
 	@OneToMany((type) => Category, (categories) => categories.user)
 	categories: Category[];
+	//图库
+	@OneToMany((type) => Gallery, (gallery) => gallery.user)
+	galleries: Gallery[];
 }
