@@ -16,13 +16,10 @@ export class BlogController {
 	) {}
 	@Get()
 	async get() {
-		const res = await getConnection()
-			.getRepository(Blog)
-			.createQueryBuilder('blog')
-			.leftJoinAndSelect('blog.categories', 'category')
-			.getMany();
-		return res;
-		//	return await this.blogdb.find({ relations: [ 'categories' ] });
+		return await this.blogdb.find({
+			relations: [ 'categories' ],
+			order: { gen: 'DESC' }
+		});
 	}
 
 	@Post() //axios : html, content
