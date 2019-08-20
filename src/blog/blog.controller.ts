@@ -17,7 +17,7 @@ export class BlogController {
 	@Get()
 	async get() {
 		return await this.blogdb.find({
-			select: [ 'id', 'categories', 'content', 'gen', 'title' ],
+			select: [ 'categories', 'content', 'gen', 'title' ],
 			relations: [ 'categories' ],
 			order: { gen: 'DESC' }
 		});
