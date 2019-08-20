@@ -45,6 +45,11 @@ export class CategoryController {
 		return await this.categorydb.find({ relations: [ 'blogs' ] });
 	}
 
+	@Get('/getby/:id')
+	async getbyid(@Param('id') id) {
+		return await this.categorydb.findOne(id, { relations: [ 'blogs' ] });
+	}
+
 	@Delete('/:id')
 	async delete(@Param('id') id) {
 		return await this.categorydb.delete(id);
