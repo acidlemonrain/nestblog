@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { BlogModule } from './blog/blog.module';
 import { CategoryModule } from './category/category.module';
 import { GalleryModule } from './gallery/gallery.module';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
 	imports: [
@@ -22,7 +23,8 @@ import { GalleryModule } from './gallery/gallery.module';
 		UserModule,
 		BlogModule,
 		CategoryModule,
-		GalleryModule
+		GalleryModule,
+		CommentModule
 	],
 	controllers: [ AppController ],
 	providers: [ AppService ]

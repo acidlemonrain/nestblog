@@ -11,6 +11,7 @@ import {
 	JoinTable,
 	CreateDateColumn
 } from 'typeorm';
+import { Comment } from 'src/comment/comment.entity';
 
 //用户属性
 @Entity()
@@ -53,4 +54,7 @@ export class User extends BaseEntity {
 	//图库
 	@OneToMany((type) => Gallery, (gallery) => gallery.user)
 	galleries: Gallery[];
+	//评论
+	@OneToMany((type) => Comment, (comment) => comment.user)
+	comments: Comment[];
 }

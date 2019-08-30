@@ -30,6 +30,12 @@ export class Blog extends BaseEntity {
 	//创建时间
 	@Column() gen: Date;
 
+	//阅读量
+	@Column({
+		default: 0
+	})
+	views: number;
+
 	//跟新时间
 	// @Column() update: Date;
 

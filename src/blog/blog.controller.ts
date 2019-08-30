@@ -38,6 +38,7 @@ export class BlogController {
 
 	@Get('/:id') //url : id
 	async GetById(@Param('id') id) {
+		this.blogdb.increment({ id: id }, 'views', 1);
 		return await this.blogdb.findOne(id, { relations: [ 'categories' ] });
 	}
 
